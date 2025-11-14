@@ -8,5 +8,19 @@ return {
     opts = {
       -- add any options here
     },
+
+    require('telescope').setup {
+      extensions = {
+        live_grep_args = {
+          auto_quoting = false, -- allows raw regex
+        },
+      },
+    },
+
+    require('telescope').load_extension 'live_grep_args',
+
+    vim.keymap.set('n', '<leader>sl', function()
+      require('telescope').extensions.live_grep_args.live_grep_args()
+    end, { desc = '[S]earch [L]ive grep (regex enabled)' }),
   },
 }
