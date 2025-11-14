@@ -166,6 +166,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- [MG]: I want to have CRLF files by default.
+vim.o.fileformat = 'dos'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
